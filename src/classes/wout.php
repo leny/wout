@@ -7,6 +7,20 @@ namespace Wout;
 
 class Wout extends Tools\Singleton {
 
+	public function __get( $sName ) {
+		switch( $sName ) {
+			case 'version':
+				return \Wout\WOUT_VERSION;
+				break;
+			case 'route':
+				return $this->_oRoute;
+				break;
+			default:
+				throw new \InvalidArgumentException( 'Wout: there is no property called "' . $sName . '" !' );
+				break;
+		}
+	} // __get
+
 	public function __call( $sName, $aArguments ) {
 		switch( $sName ) {
 			// ROUTING shortcuts
@@ -18,7 +32,7 @@ class Wout extends Tools\Singleton {
 			case 'redirect':
 			case 'callError':
 			case 'callErrorOn':
-				call_user_func_array( array( $this->_oRouting, $sName ), $aArguments );
+				call_user_func_array( array( $this->route, $sName ), $aArguments );
 				break;
 			default:
 				throw new \InvalidArgumentException( 'Wout: there is no method called "' . $sName . '" !' );
