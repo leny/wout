@@ -5,14 +5,9 @@
 
 namespace Wout;
 
-const WOUT_VERSION = '0.1';
+const WOUT_VERSION = '1.0α';
 
 include( __DIR__ . '/tools/singleton.php' );
-
-include( __DIR__ . '/classes/utils/utils.php' );
-include( __DIR__ . '/classes/utils/convertor.php' );
-include( __DIR__ . '/classes/utils/globals.php' );
-include( __DIR__ . '/classes/utils/void.php' );
 
 include( __DIR__ . '/classes/routing/router.php' );
 include( __DIR__ . '/classes/routing/route.php' );
