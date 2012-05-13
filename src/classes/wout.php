@@ -12,8 +12,8 @@ class Wout extends Tools\Singleton {
 			case 'version':
 				return \Wout\WOUT_VERSION;
 				break;
-			case 'route':
-				return $this->_oRoute;
+			case 'router':
+				return $this->_oRouting;
 				break;
 			default:
 				throw new \InvalidArgumentException( 'Wout: there is no property called "' . $sName . '" !' );
@@ -32,7 +32,7 @@ class Wout extends Tools\Singleton {
 			case 'redirect':
 			case 'callError':
 			case 'callErrorOn':
-				call_user_func_array( array( $this->route, $sName ), $aArguments );
+				call_user_func_array( array( $this->router, $sName ), $aArguments );
 				break;
 			default:
 				throw new \InvalidArgumentException( 'Wout: there is no method called "' . $sName . '" !' );
