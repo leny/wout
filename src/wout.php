@@ -5,7 +5,7 @@
 
 namespace Wout;
 
-const WOUT_VERSION = '1.&alpha;.2';
+const WOUT_VERSION = '1.&alpha;.3';
 
 include( __DIR__ . '/tools/singleton.php' );
 
