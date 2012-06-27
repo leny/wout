@@ -48,7 +48,7 @@ class Router extends \Wout\Tools\Singleton {
 	} // redirect
 
 	public function run() {
-		$this->_sCurrentURI = $_SERVER[ 'REDIRECT_URL' ];
+		$this->_sCurrentURI = $_SERVER[ 'REDIRECT_URL' ] ?: $_SERVER[ 'REQUEST_URI' ];
 		$bHasMatched = false;
 		foreach( $this->_aRegisteredRoutes as $oRoute ) {
 			if( $oRoute->match( $this->_sCurrentURI ) ) {
