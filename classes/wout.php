@@ -40,13 +40,9 @@ class Wout extends Tools\Singleton {
 		}
 	} // __call
 
-	public function init() {
-		$this->_applyConfig();
-	} // init
-
-	private function _applyConfig() {
+	public function __construct() {
 		$this->_oRouting = Routing\Router::getInstance();
-	} // _applyConfig
+	} // __construct
 
 	private $_oRouting;
 
